@@ -9,6 +9,7 @@ import {ProjectItem} from './project-item';
             (click)="selectProject()"
             [class.active]="selectedProject == project">
             <i class="fa pull-left"
+                style="vertical-align: middle"
                 [class.fa-chevron-down]="expanded && project.children.length > 0"
                 [class.fa-chevron-right]="!expanded && project.children.length > 0"
                 (click)="toggleExpanded()"></i>
