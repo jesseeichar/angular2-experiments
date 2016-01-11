@@ -1,7 +1,7 @@
 <html>
 
   <head>
-    <title>Angular 2 QuickStart</title>
+    <title>Project Manager</title>
 
     <!-- 1. Load libraries -->
     <script src="node_modules/es6-shim/es6-shim.js"></script>
@@ -9,11 +9,13 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="material/angular2_material.dev.js"></script>
+    <link rel="stylesheet" href="material/angular2_material.css" />
 
     <!-- 2. Configure SystemJS -->
     <script>
       System.config({
-        packages: {        
+        packages: {
           app: {
             format: 'register',
             defaultExtension: 'js'
@@ -28,7 +30,7 @@
 
   <!-- 3. Display the application -->
   <body>
-    <my-app>Loading...</my-app>
+    <project-app>Loading...</my-app>
   </body>
 
 </html>

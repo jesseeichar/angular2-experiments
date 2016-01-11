@@ -1,6 +1,6 @@
 {
-  "name": "angular2-quickstart",
-  "version": "1.0.0",
+  "name": "project-manager",
+  "version": "0.0.1",
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",

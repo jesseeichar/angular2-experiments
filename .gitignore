@@ -27,7 +27,6 @@ Thumbs.db
 *.sbr
 
 node_modules/
-.vscode/
 
 app/*.js
 app/*.js.map
