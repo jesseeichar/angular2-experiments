@@ -10,14 +10,14 @@ import {ProjectItem} from './project-item';
             [class.active]="selectedProject == project">
             <i class="fa pull-left"
                 style="vertical-align: middle"
-                [class.fa-chevron-down]="expanded && project.children.length > 0"
-                [class.fa-chevron-right]="!expanded && project.children.length > 0"
+                [class.fa-chevron-down]="expanded && project.children?.length > 0"
+                [class.fa-chevron-right]="!expanded && project.children?.length > 0"
                 (click)="toggleExpanded()"></i>
-            <span [style.margin-left]="project.children.length == 0 ? '1em' : undefined">{{project.name}}</span>
+            <span [style.margin-left]="project.children?.length == 0 ? '1em' : undefined">{{project.name}}</span>
             <i class="fa fa-pencil pull-right" (click)="toggleEdit($event)"></i></a>
         <input [ngStyle]="{display:showInput}" style="padding-left:1.5em"
             [(ngModel)]="project.name" />
-        <div class="collection" *ngIf="project.children.length > 0 && expanded"
+        <div class="collection" *ngIf="project.children?.length > 0 && expanded"
             style="margin-left: 1em;border-right: 0px;border-bottom: 0px;">
             <project-item *ngFor="#child of project.children"
                     [project]="child"
