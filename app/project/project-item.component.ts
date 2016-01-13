@@ -4,8 +4,8 @@ import {ProjectItem} from './project-item';
 import {ProjectService} from './project.service';
 
 @Component({
-    selector: 'project-item',
-    template: `
+  selector: 'project-item',
+  template: `
         <a  class="collection-item" style="padding-left: .5em;"
             [ngStyle]="{display:showLink}"
             (click)="selectProject()"
@@ -26,32 +26,32 @@ import {ProjectService} from './project.service';
                     (selected)="selected.next($event)"></project-item>
         </div>
     `,
-    directives: [ProjectItemComponent]
+  directives: [ProjectItemComponent]
 })
 export class ProjectItemComponent {
-    @Input() public item: ProjectItem
-    @Input() public selectedItem: ProjectItem
-    @Output() selected = new EventEmitter();
+  @Input() public item: ProjectItem
+  @Input() public selectedItem: ProjectItem
+  @Output() selected = new EventEmitter();
 
-    public expanded = false;
+  public expanded = false;
 
-    constructor(private projectService: ProjectService, private router:Router) {}
+  constructor(private projectService: ProjectService, private router: Router) { }
 
-    selectProject() {
-        this.selected.next(this.item);
-    }
+  selectProject() {
+    this.selected.next(this.item);
+  }
 
-    toggleExpanded() {
-        this.expanded = !this.expanded;
-    }
+  toggleExpanded() {
+    this.expanded = !this.expanded;
+  }
 
-    edit(item:ProjectItem) {
-        this.router.navigate(['FileEditor', {path: this.projectService.encodePath(item)}])
-    }
-    getChildren(item: ProjectItem): ProjectItem[] {
-        return this.projectService.getChildren(item);
-    }
-    hasChildren(item:ProjectItem):boolean {
-        return !this.projectService.isFile(item) && this.projectService.numChildren(item) > 0;
-    }
+  edit(item: ProjectItem) {
+    this.router.navigate(['FileEditor', { path: this.projectService.encodePath(item) }])
+  }
+  getChildren(item: ProjectItem): ProjectItem[] {
+    return this.projectService.getChildren(item);
+  }
+  hasChildren(item: ProjectItem): boolean {
+    return !this.projectService.isFile(item) && this.projectService.numChildren(item) > 0;
+  }
 }

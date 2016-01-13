@@ -3,8 +3,8 @@ import {Project, ProjectItem} from './project-item'
 import {ProjectService} from './project.service';
 import {ProjectItemComponent} from './project-item.component'
 @Component({
-    selector: 'project-browser',
-    template: `
+  selector: 'project-browser',
+  template: `
         <h5>Projects</h5>
         <div class="collection">
             <project-item *ngFor="#item of projects"
@@ -16,10 +16,10 @@ import {ProjectItemComponent} from './project-item.component'
   directives: [ProjectItemComponent]
 })
 export class ProjectBrowserComponent implements OnInit {
-    public projects: Project[];
-    public selected: ProjectItem;
-    constructor(public projectService:ProjectService) {}
-    ngOnInit() {
-        this.projects = this.projectService.getProjects();
-    }
+  public projects: Project[];
+  public selected: ProjectItem;
+  constructor(public projectService: ProjectService) { }
+  ngOnInit() {
+    this.projects = this.projectService.getProjects();
+  }
 }

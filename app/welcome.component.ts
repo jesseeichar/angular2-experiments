@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 
 @Component({
-    template: `
+  template: `
     <h2>Welcome</h2>
   `
 })

@@ -24,7 +24,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 })
 @RouteConfig([
   { path: '/welcome', name: 'Welcome', component: WelcomAppComponent, useAsDefault: true },
-  { path: '/notes/...',   name: 'NotesApp',     component: NotesAppComponent },
+  { path: '/notes/...', name: 'NotesApp', component: NotesAppComponent },
   { path: '/projects/...', name: 'ProjectsApp', component: ProjectAppComponent },
   { path: '/todos/...', name: 'TodoApp', component: TodoAppComponent }
 ])

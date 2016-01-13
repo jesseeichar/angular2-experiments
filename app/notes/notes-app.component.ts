@@ -4,7 +4,7 @@ import {NotesService, Note} from './notes.service';
 import {NoteListComponent} from './note-list.component';
 
 @Component({
-    template: `
+  template: `
     <h2>Notes</h2>
     <router-outlet></router-outlet>
   `,
@@ -12,12 +12,12 @@ import {NoteListComponent} from './note-list.component';
   providers: [NotesService]
 })
 @RouteConfig([
-    {path: '/', name: 'NoteList', component:NoteListComponent, useAsDefault: true}
+  { path: '/', name: 'NoteList', component: NoteListComponent, useAsDefault: true }
 ])
 export class NotesAppComponent implements OnInit {
-    public notes: Note[];
-    constructor(public notesService: NotesService) {}
-    ngOnInit() {
-        this.notes = this.notesService.getNotes();
-    }
+  public notes: Note[];
+  constructor(public notesService: NotesService) { }
+  ngOnInit() {
+    this.notes = this.notesService.getNotes();
+  }
 }

@@ -4,7 +4,7 @@ import {ProjectService} from './project.service';
 import {File} from './project-item';
 
 @Component({
-    template: `
+  template: `
   <div *ngIf="!file">
     No file selected
   </div>
@@ -25,27 +25,27 @@ import {File} from './project-item';
 `
 })
 export class FileEditorComponent implements OnInit {
-    private path: string;
-    public file: File;
-    public data: string;
-    public original: string;
-    public changed: boolean = false;
+  private path: string;
+  public file: File;
+  public data: string;
+  public original: string;
+  public changed: boolean = false;
 
-    constructor(private routeParams: RouteParams, private projectService: ProjectService) { }
+  constructor(private routeParams: RouteParams, private projectService: ProjectService) { }
 
-    ngOnInit() {
-        this.path = this.routeParams.get('path')
-        if (this.path) {
-          this.path = this.projectService.decodePath(this.path);
-          this.loadData();
-        }
+  ngOnInit() {
+    this.path = this.routeParams.get('path')
+    if (this.path) {
+      this.path = this.projectService.decodePath(this.path);
+      this.loadData();
     }
+  }
 
-    loadData() {
-        this.file = this.projectService.getFile(this.path);
-        this.data = null;
-        if (this.file) {
-            this.data = this.file.data;
-        }
+  loadData() {
+    this.file = this.projectService.getFile(this.path);
+    this.data = null;
+    if (this.file) {
+      this.data = this.file.data;
     }
+  }
 }

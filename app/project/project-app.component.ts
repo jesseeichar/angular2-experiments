@@ -5,7 +5,7 @@ import {FileEditorComponent} from './file-editor.component';
 import {RouteConfig, RouterOutlet} from 'angular2/router';
 
 @Component({
-    template: `
+  template: `
     <div class="row">
         <div class="col s4">
             <div class="card-panel"><project-browser></project-browser></div>
@@ -15,11 +15,11 @@ import {RouteConfig, RouterOutlet} from 'angular2/router';
         </div>
     </div>
   `,
-    directives: [ProjectBrowserComponent, RouterOutlet],
-    providers: [ProjectService]
+  directives: [ProjectBrowserComponent, RouterOutlet],
+  providers: [ProjectService]
 })
 @RouteConfig([
-    {path: '/edit', name: 'FileEditor', component:FileEditorComponent, useAsDefault: true}
+  { path: '/edit', name: 'FileEditor', component: FileEditorComponent, useAsDefault: true }
 ])
 export class ProjectAppComponent {
 }
