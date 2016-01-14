@@ -5,5 +5,5 @@ import {Component} from 'angular2/core';
     <h2>Welcome</h2>
   `
 })
-export class WelcomAppComponent {
+export class WelcomeAppComponent {
 }

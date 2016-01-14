@@ -1,9 +1,11 @@
-import {Component} from 'angular2/core';
-import {WelcomAppComponent} from './welcome.component'
-import {NotesAppComponent} from './notes/notes-app.component'
-import {ProjectAppComponent} from './project/project-app.component'
-import {TodoAppComponent} from './todo/todo-app.component'
+import {Component, provide} from 'angular2/core';
+import {WelcomeAppComponent} from './welcome.component';
+import {NotesAppComponent} from './notes/notes-app.component';
+import {ProjectAppComponent} from './project/project-app.component';
+import {TodoAppComponent} from './todo/todo-app.component';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {LocalStorageStore} from './store/local-storage.store';
+
 @Component({
   selector: 'dev-app',
   template: `
@@ -20,10 +22,11 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
     </nav>
     <router-outlet></router-outlet>
   `,
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES],
+  providers: [provide("Store", {useClass: LocalStorageStore})]
 })
 @RouteConfig([
-  { path: '/welcome', name: 'Welcome', component: WelcomAppComponent, useAsDefault: true },
+  { path: '/welcome', name: 'Welcome', component: WelcomeAppComponent, useAsDefault: true },
   { path: '/notes/...', name: 'NotesApp', component: NotesAppComponent },
   { path: '/projects/...', name: 'ProjectsApp', component: ProjectAppComponent },
   { path: '/todos/...', name: 'TodoApp', component: TodoAppComponent }

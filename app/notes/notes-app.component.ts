@@ -1,4 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {RouteConfig, RouterOutlet} from 'angular2/router';
 import {NotesService, Note} from './notes.service';
 import {NoteListComponent} from './note-list.component';
@@ -14,10 +14,5 @@ import {NoteListComponent} from './note-list.component';
 @RouteConfig([
   { path: '/', name: 'NoteList', component: NoteListComponent, useAsDefault: true }
 ])
-export class NotesAppComponent implements OnInit {
-  public notes: Note[];
-  constructor(public notesService: NotesService) { }
-  ngOnInit() {
-    this.notes = this.notesService.getNotes();
-  }
+export class NotesAppComponent {
 }
