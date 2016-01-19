@@ -5,6 +5,8 @@ import {ProjectAppComponent} from './project/project-app.component';
 import {TodoAppComponent} from './todo/todo-app.component';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {LocalStorageStore} from './store/local-storage.store';
+import {ConfirmDialog} from './dialogs/confirm-dialog.component';
+import {DialogService} from './dialogs/dialog.service';
 
 @Component({
   selector: 'dev-app',
@@ -21,9 +23,10 @@ import {LocalStorageStore} from './store/local-storage.store';
         </div>
     </nav>
     <router-outlet></router-outlet>
+    <confirm-dialog-modal></confirm-dialog-modal>
   `,
-  directives: [ROUTER_DIRECTIVES],
-  providers: [provide("Store", {useClass: LocalStorageStore})]
+  directives: [ROUTER_DIRECTIVES, ConfirmDialog],
+  providers: [provide("Store", {useClass: LocalStorageStore}), DialogService]
 })
 @RouteConfig([
   { path: '/welcome', name: 'Welcome', component: WelcomeAppComponent, useAsDefault: true },

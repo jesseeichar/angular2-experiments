@@ -38,7 +38,7 @@ export class ProjectItemComponent {
   constructor(private projectService: ProjectService, private router: Router) { }
 
   selectProject() {
-    this.selected.next(this.item);
+    this.selected.emit(this.item);
   }
 
   toggleExpanded() {
