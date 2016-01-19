@@ -52,7 +52,7 @@ export class FileEditorComponent implements OnInit, CanDeactivate, AfterViewInit
     };
   }
   dataChanged(event: any) {
-    if (!event.ctrlKey && (event.keyCode == 32 || event.keyCode > 49) {
+    if (!event.ctrlKey && (event.keyCode == 32 || event.keyCode > 49)) {
       this.changed = true;
     }
   }

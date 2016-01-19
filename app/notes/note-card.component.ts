@@ -1,6 +1,6 @@
 import {Component, Input} from 'angular2/core';
 import {Note, NotesService} from './notes.service'
-import {Materialize} from '../../definitions/Materialize'
+
 @Component({
   selector: 'li',
   template: `
