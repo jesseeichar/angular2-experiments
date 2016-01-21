@@ -1,0 +1,19 @@
+<new-todo></new-todo>
+<ul class="collapsible" data-collapsible="expandable">
+  <li>
+    <div class="collapsible-header active">Open</div>
+    <div class="collapsible-body">
+      <ul class="todo-list" >
+        <todo *ngFor="#todo of todos" [todo]="todo"></todo>
+      </ul>
+    </div>
+  </li>
+  <li>
+    <div class="collapsible-header">Completed</div>
+    <div class="collapsible-body">
+      <ul class="todo-list">
+        <todo *ngFor=" #todo of done " [todo]="todo "></todo>
+      </ul>
+    </div>
+  </li>
+</ul>

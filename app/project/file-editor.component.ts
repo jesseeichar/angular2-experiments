@@ -5,6 +5,7 @@ import {File} from './project-item';
 import {DialogService} from '../dialogs/dialog.service';
 
 @Component({
+  selector: 'file-editor',
   template: `
   <div *ngIf="!file">
     No file selected
@@ -47,8 +48,11 @@ export class FileEditorComponent implements OnInit, CanDeactivate, AfterViewInit
   ngAfterViewInit() {
     $('#file-editor-' + this.id).trigger('autoresize');
     window.onkeydown = event => {
-      console.log('Ctrl+S!');
-      event.preventDefault();
+      if (event.keyCode == 83 && event.ctrlKey) {
+        this.changed = false;
+        this.file.data = this.data;
+        event.preventDefault();
+      }
     };
   }
   dataChanged(event: any) {

@@ -1,5 +1,5 @@
-import {Component, Input, Output, EventEmitter, OnChanges, SimpleChange} from 'angular2/core';
-import {Router} from 'angular2/router';
+import {Component, Input, Output, EventEmitter, OnChanges, SimpleChange, OnInit} from 'angular2/core';
+import {Router, RouteParams} from 'angular2/router';
 import {ProjectItem} from './project-item';
 import {ProjectService} from './project.service';
 
@@ -28,14 +28,25 @@ import {ProjectService} from './project.service';
     `,
   directives: [ProjectItemComponent]
 })
-export class ProjectItemComponent {
+export class ProjectItemComponent implements OnInit {
   @Input() public item: ProjectItem
   @Input() public selectedItem: ProjectItem
   @Output() selected = new EventEmitter();
 
   public expanded = false;
 
-  constructor(private projectService: ProjectService, private router: Router) { }
+  constructor(private projectService: ProjectService, private router: Router, private routeParams: RouteParams) { }
+
+  ngOnInit() {
+    let path = this.routeParams.get('path')
+    if (path) {
+      path = this.projectService.decodePath(path);
+      this.expanded = path.startsWith(this.item.path);
+      if (path === this.item.path) {
+        this.selectProject();
+      }
+    }
+  }
 
   selectProject() {
     this.selected.emit(this.item);
@@ -46,7 +57,7 @@ export class ProjectItemComponent {
   }
 
   edit(item: ProjectItem) {
-    this.router.navigate(['FileEditor', { path: this.projectService.encodePath(item) }])
+    this.router.navigate(['FileBrowser', { path: this.projectService.encodePath(item) }])
   }
   getChildren(item: ProjectItem): ProjectItem[] {
     return this.projectService.getChildren(item);
