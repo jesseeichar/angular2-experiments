@@ -25,10 +25,8 @@ export class TodoListComponent implements OnInit {
     this.todos = this.todoService.getTodos();
     this.done = this.todoService.getDone();
 
-    $(document).ready(function(){
       $('.collapsible').collapsible({
         accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
       });
-    });
   }
 }

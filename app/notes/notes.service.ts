@@ -51,6 +51,7 @@ export class NotesService {
     for (var i=0; i < md.keys.length; i++) {
       notes.push(this.store.getJson(Keys.ID_PREFIX + md.keys[i], new Note()));
     }
+
     return notes;
   }
 
