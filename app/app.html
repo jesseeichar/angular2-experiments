@@ -1,0 +1,20 @@
+<router-outlet name="newtodo"></router-outlet>
+<ul id="dropdown1" class="dropdown-content">
+    <li><a [routerLink]="['Rxjs']">RXJS</a></li>
+    <li><a [routerLink]="['AngularQuery']">Angular Query</a></li>
+</ul>
+<nav style="padding-left:5px">
+    <div class="nav-wrapper">
+        <a class="brand-logo">Dev Dashboard</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a (click)="newTodo()">New Todo</a></li>
+            <li><a [routerLink]="['Welcome']">Welcome</a></li>
+            <li><a [routerLink]="['NotesApp']">Notes</a></li>
+            <li><a [routerLink]="['TodoApp']">Todos</a></li>
+            <li><a [routerLink]="['ProjectsApp']">Projects</a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Miscellaneous<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+    </div>
+</nav>
+<router-outlet></router-outlet>
+<confirm-dialog-modal></confirm-dialog-modal>
