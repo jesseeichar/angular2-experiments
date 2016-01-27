@@ -15,9 +15,10 @@ import {Component, Input, Query, QueryList, ElementRef} from 'angular2/core';
 })
 export class Card {
     @Input() gridCount: number;
-    title: ElementRef;
-    
-    constructor(@Query("cardtitle") title: QueryList<ElementRef>) {
-        this.title = title.first; 
-    }
+    @Input() title: string;
+    // title: ElementRef;
+
+    // constructor(@Query("cardtitle") title: QueryList<ElementRef>) {
+    //     this.title = title.first;
+    // }
 }

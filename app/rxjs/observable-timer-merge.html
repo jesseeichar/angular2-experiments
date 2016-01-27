@@ -1,0 +1,18 @@
+<div class="row">
+    <card [gridCount]="4" [title]="'Unfiltered List'">
+        <ul>
+            <li *ngFor="#number of ints">{{number}}</li>
+        </ul>
+    </card>
+
+    <card [gridCount]="4" [title]="'Mod ' + modValue + ' Observable filtered List'">
+        <ul>
+            <li *ngFor="#number of filtered">{{number}}</li>
+        </ul>
+    </card>
+    <card [gridCount]="4" [title]="'Mod 3 Filter in subscribe'">
+        <ul>
+            <li *ngFor="#number of filtered2">{{number}}</li>
+        </ul>
+    </card>
+</div>

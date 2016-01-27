@@ -17,7 +17,7 @@ import {AngularQueryAppComponent} from './query/query-app.component'
 export let routeConfig : [RouteDefinition] = [
   { path: '/welcome', name: 'Welcome', component: WelcomeAppComponent, useAsDefault: true },
   { path: '/rxjs', name: 'Rxjs', component: RxjsAppComponent },
-  { path: '/query', name: 'AngularQuery', component: AngularQueryAppComponent },
+  { path: '/query/...', name: 'AngularQuery', component: AngularQueryAppComponent },
   { path: '/notes/...', name: 'NotesApp', component: NotesAppComponent },
   { path: '/projects/...', name: 'ProjectsApp', component: ProjectAppComponent },
   { path: '/todos/...', name: 'TodoApp', component: TodoAppComponent },
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
   constructor(private _nav: Navigation) {}
   ngOnInit() {
     this._nav.init();
-    $(".dropdown-button").dropdown( { hover: false } );
+    $(".dropdown-button").dropdown( { hover: true } );
   }
   newTodo() {
     this._nav.newTodo();

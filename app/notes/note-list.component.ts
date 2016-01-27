@@ -18,14 +18,13 @@ import {Observable} from 'rxjs/Observable'
     </div>
   </form>
   <ul class="collapsible popout" data-collapsible="accordion">
-      <li *ngFor="#note of filteredNotes()" id="note-li-{{note.id}}" [note]="note"></li>
+      <li *ngFor="#note of notes" id="note-li-{{note.id}}" [note]="note"></li>
   </ul>
     `,
   directives: [NoteCardComponent]
 })
 export class NoteListComponent implements OnInit, AfterViewInit {
-  public notes: Observable<Note>;
-  public filter = "";
+  public notes: Note[];
   constructor(private notesService: NotesService) { }
 
   ngAfterViewInit() {
@@ -47,9 +46,11 @@ export class NoteListComponent implements OnInit, AfterViewInit {
     this.notesService.save(new Note()); // TODO finish implementation
   }
   search(filter: string) {
-    this.filter = filter;
-  }
-  filteredNotes(): Observable<Note> {
-    return this.notes.filter(n => !this.filter || n.name.indexOf(this.filter) > -1 || n.text.indexOf(this.filter) > -1)
+    if (!filter) {
+      this.notes = this.notesService.notes();
+    }
+    this.notes = this.notesService.notes().filter(n => {
+      return n.name.toLowerCase().indexOf(filter) > -1 || n.text.toLowerCase().indexOf(filter) > -1;
+    });
   }
 }
