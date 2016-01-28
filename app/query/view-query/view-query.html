@@ -1,0 +1,6 @@
+<h4>View Query Example</h4>
+Number of Children: {{numberOfElements}}
+<ul>
+  <item *ngFor="#id of itemIds"> Item: {{id}} </item>
+<ul>
+<a class="waves-effect waves-light btn" (click)="addItem($event)">Add Item</a>
