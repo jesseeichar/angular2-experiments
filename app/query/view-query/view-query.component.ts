@@ -1,5 +1,5 @@
 import {Component, ViewQuery, QueryList} from 'angular2/core';
-import {ItemComponent} from './item.component';
+import {ItemComponent} from '../item.component';
 
 @Component({
   templateUrl: 'app/query/view-query/view-query.html',
