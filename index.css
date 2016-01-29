@@ -1,8 +1,10 @@
-li a.router-link-active {
+ul.side-panel > li > a.router-link-active {
   background: #039be5;
   color: white;
 }
-
+nav li > a.router-link-active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 li.error a {
   color: red;
 }

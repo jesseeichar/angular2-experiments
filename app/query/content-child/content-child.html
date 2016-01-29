@@ -1,9 +1,10 @@
-<h4>View Child Experiement </h4>
+<h4> Content Child Experiement </h4>
 <h5>Look up based on directive</h5>
-<item [id]="'the id'">The one single Item</item>
+
+<ng-content></ng-content>
 
 <query-results
-  [typeName]="'ViewChild'"
+  [typeName]="'ContentChild'"
   [gridCount]="12"
   [itemsForTemplate]="state[0].childForTemplate"
   [isList]="false"
@@ -11,10 +12,9 @@
   [setAtAfterViewInitAndInit]="state[0].setAtAfterViewInitAndInit"></query-results>
 
 <h5>Look up based on variable name</h5>
-<div id="Lookup element's id attribute'" #lookup>This element can be obtained based on the variable name</div>
 
 <query-results
-  [typeName]="'ViewChild'"
+  [typeName]="'ContentChild'"
   [gridCount]="12"
   [itemsForTemplate]="state[1].childForTemplate"
   [isList]="false"

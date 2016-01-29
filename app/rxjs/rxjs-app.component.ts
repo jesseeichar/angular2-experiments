@@ -8,7 +8,7 @@ import {ObservableCreateExample} from './observable-timer-merge.component';
 <behavior-subject></behavior-subject>
 
 <h4>Observable Complete</h4>
-<observable-create></observable-create>
+<observable-timer-merge></observable-timer-merge>
 `,
     directives: [BehaviorSubjectExample, ObservableCreateExample]
 })

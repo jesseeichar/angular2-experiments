@@ -1,0 +1,19 @@
+<ul>
+  <li>Item at OnInit was set: {{setAtInit}}</li>
+  <li>Item at AfterViewInit was set: {{setAtAfterViewInitAndInit}}</li>
+</ul>
+
+<div *ngIf="!isList">
+  <p>When the query works a card will be added below this line with the id of the item:</p>
+  <card *ngIf="itemsForTemplate" [title]="typeName + ' Display Card'" [gridCount]="gridCount">
+    <p>The '{{typeName}}' is set and the id is: '{{itemsForTemplate.id}}'</p>
+  </card>
+  <div *ngIf="!itemsForTemplate">ERROR some bug is causing this to show</div>
+</div>
+<div *ngIf="isList">
+  <p>When the query works a card for each selected child will be added below this line with the id of the item:</p>
+  <card *ngFor="#child of itemsForTemplate; #idx = index" [title]="typeName + ' Display Card'" [gridCount]="gridCount">
+    <p>The {{idx}}th child and the id is: '{{child.id}}'</p>
+  </card>
+  <div *ngIf="!itemsForTemplate || itemsForTemplate.length == 0">ERROR some bug is causing this to show</div>
+</div>

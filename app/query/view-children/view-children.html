@@ -1,8 +1,36 @@
-<h4> View Child Experiement </h4>
-<h5>:( Currently broken.  Work remains to figure out how to use ViewChild annotion</h5>
-<item [id]="'the id'">The one single Item</item>
+<h4>View Child Experiement </h4>
+
+<h5>Search for item Directive</h5>
 
 <ul>
-  <li>Item at OnInit was set: {{setAtInit}}</li>
-  <!--<li>Item at AfterViewInit was set: {{setAtAfterViewInitAndInit}}</li>-->
+  <item [id]="'item 1'">Item 1</item>
+  <item [id]="'item 2'">Item 2</item>
+  <item [id]="'item 3'">Item 3</item>
+  <item [id]="'item 4'">Item 4</item>
 </ul>
+
+<query-results
+  [gridCount]="3"
+  [typeName]="'ViewChildren'"
+  [itemsForTemplate]="states[0].itemsForTemplate"
+  [isList]="true"
+  [setAtInit]="states[0].setAtInit"
+  [setAtAfterViewInitAndInit]="states[0].setAtAfterViewInitAndInit"></query-results>
+
+
+<h5>Search for elements with given variable</h5>
+
+<ul>
+  <li id="listItem1 Id" #lookup>list item1</li>
+  <li id="listItem2 Id" #lookup>list item2</li>
+  <li id="listItem3 Id" #lookup>list item3</li>
+  <li id="listItem4 Id" #lookup>list item4</li>
+</ul>
+
+<query-results
+  [typeName]="'ViewChildren'"
+  [gridCount]="3"
+  [itemsForTemplate]="states[1].itemsForTemplate"
+  [isList]="true"
+  [setAtInit]="states[1].setAtInit"
+  [setAtAfterViewInitAndInit]="states[1].setAtAfterViewInitAndInit"></query-results>

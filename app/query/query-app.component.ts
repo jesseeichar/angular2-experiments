@@ -4,6 +4,8 @@ import {QueryDirectiveComponent} from './query-directive/query-directive.compone
 import {ViewQueryComponent} from './view-query/view-query.component';
 import {ViewChildComponent} from './view-child/view-child.component';
 import {ViewChildrenComponent} from './view-children/view-children.component';
+import {ContentChildContainerComponent} from './content-child/container.component';
+import {ContentChildrenContainerComponent} from './content-children/container.component';
 
 @Component({
     templateUrl: 'app/query/query-app.html',
@@ -14,5 +16,7 @@ import {ViewChildrenComponent} from './view-children/view-children.component';
  { path: '/viewquery', name: 'ViewQuery', component: ViewQueryComponent },
  { path: '/viewchild', name: 'ViewChildComponent', component: ViewChildComponent },
  { path: '/viewchildren', name: 'ViewChildrenComponent', component: ViewChildrenComponent },
+ { path: '/contentchild', name: 'ContentChildComponent', component: ContentChildContainerComponent },
+ { path: '/contentchildren', name: 'ContentChildrenComponent', component: ContentChildrenContainerComponent },
 ])
 export class AngularQueryAppComponent {}

@@ -3,8 +3,8 @@ import {Observable, Subscriber} from 'rxjs/Rx';
 import {Card} from '../common/card.component'
 
 @Component({
-    selector: 'observable-create',
-    templateUrl: 'app/rxjs/observable-create.html',
+    selector: 'observable-timer-merge',
+    templateUrl: 'app/rxjs/observable-timer-merge.html',
     directives: [Card]
 })
 export class ObservableCreateExample implements OnInit {

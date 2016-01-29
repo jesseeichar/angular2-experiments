@@ -12,12 +12,14 @@ import {TodoService} from './todo/todo.service';
 import {EmptyApp} from './empty-app.component';
 import {Navigation} from './navigation.service';
 import {RxjsAppComponent} from './rxjs/rxjs-app.component';
-import {AngularQueryAppComponent} from './query/query-app.component'
+import {AngularQueryAppComponent} from './query/query-app.component';
+import {RendererAppComponent} from './renderer/renderer-app.component';
 
 export let routeConfig : [RouteDefinition] = [
   { path: '/welcome', name: 'Welcome', component: WelcomeAppComponent, useAsDefault: true },
   { path: '/rxjs', name: 'Rxjs', component: RxjsAppComponent },
   { path: '/query/...', name: 'AngularQuery', component: AngularQueryAppComponent },
+  { path: '/renderer/...', name: 'RendererApp', component: RendererAppComponent },
   { path: '/notes/...', name: 'NotesApp', component: NotesAppComponent },
   { path: '/projects/...', name: 'ProjectsApp', component: ProjectAppComponent },
   { path: '/todos/...', name: 'TodoApp', component: TodoAppComponent },
