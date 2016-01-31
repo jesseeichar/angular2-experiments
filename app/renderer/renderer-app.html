@@ -3,8 +3,10 @@
   <div class="col s2 z-depth-3" style="height: 100%">
     <ul class="side-panel">
       <li><a [routerLink]="['AddAttribute']">Add Attribute to element</a></li>
-      <li><a>Set Style to element</a></li>
-      <li><a>Add View</a></li>
+      <li><a [routerLink]="['SetStyle']">Set Style to element</a></li>
+      <li><a [routerLink]="['AddElement']">Add an element to element</a></li>
+      <li><a [routerLink]="['SelectRootElement']">Select Root Element</a></li>
+      <li><a [routerLink]="['CreateTemplateAnchor']">Add Comment to a node</a></li>
     </ul>
   </div>
   <div class="col s10">

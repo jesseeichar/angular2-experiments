@@ -1,42 +1,36 @@
-import {Component, QueryList, Query, AfterViewInit, OnInit} from 'angular2/core';
+import {Component, QueryList, Query, AfterViewInit, OnInit, ElementRef} from 'angular2/core';
 import {PaneComponent} from './pane.component';
 @Component({
   selector: 'tabs',
-  template: `
-  <p>Number of Panes at init: {{numPanesAtInit}}</p>
-  <p>Number of Panes after view init: {{numPanesAfterViewInit}}</p>
-   <div class="row">
-    <div class="col s12">
-      <ul class="tabs">
-        <li
-            *ngFor="#pane of panes, #i=index"
-            class="tab col s3"
-            [class.active]="i == 0">
-          <a href="#{{pane.id}}">{{pane.title}}</a>
-        </li>
-      </ul>
-    </div>
-
-   <ng-content></ng-content>
-  </div>
-`
+  templateUrl: 'app/query/query-directive/tab.html'
 })
 export class TabComponent implements OnInit, AfterViewInit {
   numPanesAtInit: number;
+  numXPanesAtInit: number;
   numPanesAfterViewInit: number;
+  numXPanesAfterViewInit: number;
   panes: QueryList<PaneComponent>;
-  constructor(@Query(PaneComponent) panes:QueryList<PaneComponent>) {
+  xpanes:QueryList<ElementRef>;
+  constructor(
+    @Query(PaneComponent) panes:QueryList<PaneComponent>,
+    @Query('xpane') xpanes:QueryList<ElementRef>
+    ) {
     this.panes = panes;
+    this.xpanes = xpanes;
   }
 
   ngOnInit() {
     this.numPanesAtInit = this.panes.length;
+    this.numXPanesAtInit = this.panes.length;
   }
 
   ngAfterViewInit() {
      $('ul.tabs').tabs();
 
-     setTimeout(() => {this.numPanesAfterViewInit = this.panes.length});
+     setTimeout(() => {
+       this.numPanesAfterViewInit = this.panes.length;
+       this.numXPanesAfterViewInit = this.xpanes.length;
+      });
 
   }
 }

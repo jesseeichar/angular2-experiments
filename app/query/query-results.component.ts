@@ -1,5 +1,5 @@
 import {Component, Input} from 'angular2/core';
-import {Card} from '../common/card.component';
+import {Card} from '../common/exports';
 
 @Component({
   selector: 'query-results',

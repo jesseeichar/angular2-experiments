@@ -1,0 +1,18 @@
+<strong>How content queries (and @Query) queries are evaluated</strong>
+Content Queries are performed on the data that is contained within the Component element.  For example:
+
+<pre>
+  <code>
+    &lt;component>
+      <item #varname>Anything within the component element is selectable.</item>
+    &lt;/component>
+  </code>
+</pre>
+
+In the example above the item element is queryable.  If there is a Component for <em>item</em> then
+queries can be constructed that can select the Components.  See the code for how to create the queries.
+
+In addition elements can be selected by selecting on variable bindings.  In the example that is: <em>varname</em>.
+
+Content Queries are performed on the content of the Component, after the content has been processed but before
+the Component has been processed.  This means that the data can be accessed at early phases such as ngOnInit.

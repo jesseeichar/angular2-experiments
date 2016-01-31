@@ -1,6 +1,6 @@
 import {Component, ViewChildren, QueryList, AfterViewInit, OnInit, ElementRef} from 'angular2/core';
 import {ItemComponent} from '../item.component';
-import {Card} from '../../common/card.component';
+import {Card} from '../../common/exports';
 import {MultiState} from '../state';
 import {QueryResultsComponent} from '../query-results.component';
 

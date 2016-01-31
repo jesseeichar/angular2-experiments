@@ -1,10 +1,11 @@
 import {Component, provide, OnInit} from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES, RouteDefinition} from 'angular2/router';
+import {HTTP_PROVIDERS} from 'angular2/http';
 import {WelcomeAppComponent} from './welcome.component';
 import {NotesAppComponent} from './notes/notes-app.component';
 import {ProjectAppComponent} from './project/project-app.component';
 import {TodoAppComponent} from './todo/todo-app.component';
 import {NewTodoBoxComponent} from './todo/new-todo-box.component';
-import {RouteConfig, ROUTER_DIRECTIVES, RouteDefinition} from 'angular2/router';
 import {LocalStorageStore} from './store/local-storage.store';
 import {ConfirmDialog} from './dialogs/confirm-dialog.component';
 import {DialogService} from './dialogs/dialog.service';
@@ -31,7 +32,7 @@ export let routeConfig : [RouteDefinition] = [
   selector: 'dev-app',
   templateUrl: 'app/app.html',
   directives: [ROUTER_DIRECTIVES, ConfirmDialog],
-  providers: [provide("Store", {useClass: LocalStorageStore}), DialogService, TodoService, Navigation]
+  providers: [provide("Store", {useClass: LocalStorageStore}), DialogService, TodoService, Navigation, HTTP_PROVIDERS]
 })
 @RouteConfig(routeConfig)
 export class AppComponent implements OnInit {

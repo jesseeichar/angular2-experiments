@@ -1,6 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
 import {Observable, Subscriber} from 'rxjs/Rx';
-import {Card} from '../common/card.component'
+import {Card} from '../common/exports'
 
 @Component({
     selector: 'observable-timer-merge',

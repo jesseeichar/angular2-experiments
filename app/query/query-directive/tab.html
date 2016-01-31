@@ -1,0 +1,30 @@
+<p>Number of Panes at init: {{numPanesAtInit}}</p>
+<p>Number of Panes after view init: {{numPanesAfterViewInit}}</p>
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li *ngFor="#pane of panes, #i=index" class="tab col s3" [class.active]="i == 0">
+        <a href="#{{pane.id}}">{{pane.title}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<ng-content select="pane"></ng-content>
+
+<h4>This section uses look up based on variable binding (#xpane) </h4>
+
+<p>Number of XPanes at init: {{numXPanesAtInit}}</p>
+<p>Number of XPanes after view init: {{numXPanesAfterViewInit}}</p>
+
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li *ngFor="#pane of xpanes, #i=index" class="tab col s3" [class.active]="i == 0">
+        <a href="#{{pane.nativeElement.id}}">{{pane.nativeElement.id}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<ng-content select=".xpane"></ng-content>

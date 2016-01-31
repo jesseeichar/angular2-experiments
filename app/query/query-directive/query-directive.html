@@ -1,7 +1,17 @@
 <h4>Directive Query Example</h4>
+<import-html
+  [path]="'/app/query/content-child/explain-component.html'"
+  [elClass]="'z-depth-3'"
+  [elStyle]="{'background-color': '#e6e6e6', 'border-width': '1px', 'border-style': 'solid', 'border-color': '#bfbfbf'}"></import-html>
+
 <tabs>
   <pane [id]="'pane1'" [title]="'Pane 1'">Pane 1</pane>
   <pane [id]="'pane2'" [title]="'Pane 2'">Pane 2</pane>
   <pane [id]="'pane3'" [title]="'Pane 3'">Pane 3</pane>
   <pane [id]="'pane4'" [title]="'Pane 4'">Pane 4</pane>
+
+  <div #xpane id="xpane1" class="xpane">XPane 1</div>
+  <div #xpane id="xpane2" class="xpane">XPane 2</div>
+  <div #xpane id="xpane3" class="xpane">XPane 3</div>
+  <div #xpane id="xpane4" class="xpane">XPane 4</div>
 </tabs>
