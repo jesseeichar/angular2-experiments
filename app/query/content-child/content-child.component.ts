@@ -2,12 +2,12 @@ import {Component, ContentChild, AfterViewInit, OnInit, Renderer, ElementRef, Vi
 import {ItemComponent} from '../item.component';
 import {QueryResultsComponent} from '../query-results.component';
 import {SingleState} from '../state';
-import {ImportComponent} from '../../common/exports'
+import {ImportComponent, Card} from '../../common/exports'
 
 @Component({
   selector: 'content-child',
   templateUrl: '/app/query/content-child/content-child.html',
-  directives: [QueryResultsComponent, ImportComponent]
+  directives: [QueryResultsComponent, ImportComponent, Card]
 })
 export class ContentChildComponent implements AfterViewInit, OnInit{
   state : SingleState[] = [new SingleState(), new SingleState()]

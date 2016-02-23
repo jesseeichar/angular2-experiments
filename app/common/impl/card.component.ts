@@ -6,7 +6,7 @@ import {Component, Input, Query, QueryList, ElementRef} from 'angular2/core';
 <div class="col s{{gridCount}}">
     <div class="card blue-grey darken-1">
         <div class="card-content white-text">
-            <span class="card-title">{{title}}</span>
+            <span *ngIf="title" class="card-title">{{title}}</span>
             <ng-content></ng-content>
         </div>
     </div>
@@ -14,7 +14,7 @@ import {Component, Input, Query, QueryList, ElementRef} from 'angular2/core';
 `
 })
 export class Card {
-    @Input() gridCount: number;
+    @Input() gridCount: number = 12;
     @Input() title: string;
     // title: ElementRef;
 

@@ -1,12 +1,7 @@
 import {Component, Renderer, AfterViewInit, ViewChild, ElementRef} from 'angular2/core';
 
 @Component({
-  templateUrl: 'app/renderer/create-template-anchor/create-template-anchor.component.html',
-  styles: [`
-  div[newAtt] {
-    color: red;
-  }
-  `]
+  templateUrl: 'app/renderer/create-template-anchor/create-template-anchor.component.html'
 })
 export class CreateTemplateAnchorComponent implements AfterViewInit {
   @ViewChild('add') el: ElementRef;

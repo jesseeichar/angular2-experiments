@@ -6,7 +6,7 @@ import {Http, Response} from 'angular2/http';
   template: `
 <div *ngIf="html"
   [ngClass]="elClass"
-  [ngStyle]="elStyle">{{html}}</div>
+  [ngStyle]="elStyle" [innerHTML]="html"></div>
 <div *ngIf="error" class="row error">
   <div class="col s12">Error Encountered:</div>
   <div class="col s12">Status: {{error.status}}, statusText: {{error.statusText}}</div>

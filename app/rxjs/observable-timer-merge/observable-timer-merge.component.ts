@@ -1,10 +1,9 @@
 import {Component, OnInit} from 'angular2/core';
 import {Observable, Subscriber} from 'rxjs/Rx';
-import {Card} from '../common/exports'
+import {Card} from '../../common/exports'
 
 @Component({
-    selector: 'observable-timer-merge',
-    templateUrl: 'app/rxjs/observable-timer-merge.html',
+    templateUrl: 'app/rxjs/observable-timer-merge/observable-timer-merge.html',
     directives: [Card]
 })
 export class ObservableCreateExample implements OnInit {

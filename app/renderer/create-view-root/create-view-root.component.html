@@ -1,0 +1,12 @@
+<h5 class="materialize-red-text text-lighten-2">Not yet functioning </h5>
+<h4>View experiments</h4>
+<div>
+  A View Root is essentially the same as a "Shadow Root" in the shadow dom.  The Renderer has methods
+  for creating, deleting, attaching and moving view roots.  A created View Root will be configured with the
+  styles the renderer is configured with.
+</div>
+<a class="btn waves-effect waves-light" (click)="createView()">Create View Root</a>
+<a class="btn waves-effect waves-light" (click)="moveViews()">Move View Roots</a>
+<a class="btn waves-effect waves-light" (click)="destroyViews()">Destroy View Roots</a>
+<card><div #add>Views will be added to this div</div></card>
+<card><div #move>Views will be moved here</div></card>

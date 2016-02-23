@@ -2,11 +2,12 @@ import {Component, ContentChildren, QueryList, AfterViewInit, OnInit, ElementRef
 import {ItemComponent} from '../item.component';
 import {MultiState} from '../state';
 import {QueryResultsComponent} from '../query-results.component';
+import {ImportComponent, Card} from '../../common/exports'
 
 @Component({
   selector: 'content-children',
   templateUrl: '/app/query/content-children/content-children.html',
-  directives: [QueryResultsComponent]
+  directives: [QueryResultsComponent, Card, ImportComponent]
 })
 export class ContentChildrenComponent implements AfterViewInit, OnInit {
   states = [new MultiState(), new MultiState()]

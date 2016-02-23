@@ -1,9 +1,7 @@
 <h4> Content Child Experiement </h4>
-<import-html
-  [path]="'/app/query/content-child/explain-component.html'"
-  [elClass]="'z-depth-3'"
-  [elStyle]="{'background-color': '#e6e6e6', 'border-width': '1px', 'border-style': 'solid', 'border-color': '#bfbfbf'}"></import-html>
-
+<card>
+  <import-html [path]="'/app/query/content-child/explain-component.html'"></import-html>
+</card>
 <h5>Look up based on directive</h5>
 
 <ng-content></ng-content>

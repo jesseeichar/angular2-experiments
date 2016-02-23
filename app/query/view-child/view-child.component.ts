@@ -4,7 +4,7 @@ import {QueryResultsComponent} from '../query-results.component';
 import {SingleState} from '../state';
 
 @Component({
-  templateUrl: '/app/query/content-child/content-child.html',
+  templateUrl: '/app/query/view-child/view-child.html',
   directives: [ItemComponent, QueryResultsComponent]
 })
 export class ViewChildComponent implements AfterViewInit, OnInit{

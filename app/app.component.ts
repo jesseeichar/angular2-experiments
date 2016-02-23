@@ -18,7 +18,7 @@ import {RendererAppComponent} from './renderer/renderer-app.component';
 
 export let routeConfig : [RouteDefinition] = [
   { path: '/welcome', name: 'Welcome', component: WelcomeAppComponent, useAsDefault: true },
-  { path: '/rxjs', name: 'Rxjs', component: RxjsAppComponent },
+  { path: '/rxjs/...', name: 'Rxjs', component: RxjsAppComponent },
   { path: '/query/...', name: 'AngularQuery', component: AngularQueryAppComponent },
   { path: '/renderer/...', name: 'RendererApp', component: RendererAppComponent },
   { path: '/notes/...', name: 'NotesApp', component: NotesAppComponent },

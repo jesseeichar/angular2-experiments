@@ -1,10 +1,9 @@
 import {Component, OnInit} from 'angular2/core';
 import {Observable, BehaviorSubject} from 'rxjs/Rx';
-import {Card} from '../common/exports'
+import {Card} from '../../common/exports'
 
 @Component({
-    selector: 'behavior-subject',
-    templateUrl: 'app/rxjs/behavior-subject.html',
+    templateUrl: 'app/rxjs/behavior-subject/behavior-subject.html',
     directives: [Card]
 })
 export class BehaviorSubjectExample implements OnInit {
